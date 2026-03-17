@@ -1,0 +1,68 @@
+<Window x:Class="EyeClinicApp.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация пользователя" 
+        Height="693" Width="457"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Border Background="White" CornerRadius="12" Margin="20">
+            <StackPanel Margin="30" VerticalAlignment="Center">
+
+                <TextBlock Text="Регистрация" FontSize="22" FontWeight="Bold"
+                           HorizontalAlignment="Center" Foreground="{StaticResource PrimaryBrush}"
+                           Margin="0,0,0,25"/>
+
+                <!-- ФИО -->
+                <TextBlock Text="ФИО" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtFIO" Style="{StaticResource ModernTextBox}" 
+                         Margin="0,0,0,12"/>
+
+                <!-- Логин -->
+                <TextBlock Text="Логин" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtLogin" Style="{StaticResource ModernTextBox}" 
+                         Margin="0,0,0,12"/>
+
+                <!-- Пароль -->
+                <TextBlock Text="Пароль" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <PasswordBox x:Name="txtPassword" Style="{StaticResource ModernPasswordBox}"
+                             Margin="0,0,0,12"/>
+
+                <!-- Подтверждение пароля -->
+                <TextBlock Text="Подтверждение пароля" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <PasswordBox x:Name="txtPasswordConfirm" Style="{StaticResource ModernPasswordBox}"
+                             Margin="0,0,0,12"/>
+
+                <!-- Должность -->
+                <TextBlock Text="Должность" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <ComboBox x:Name="cmbRole" FontSize="14" Padding="10,8" Margin="0,0,0,15">
+                    <ComboBoxItem Content="Регистратор"/>
+                    <ComboBoxItem Content="Врач"/>
+                </ComboBox>
+
+                <!-- Сообщение -->
+                <TextBlock x:Name="txtError" Foreground="{StaticResource DangerBrush}" 
+                           FontSize="12" TextWrapping="Wrap" Margin="0,0,0,10"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Кнопки -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Зарегистрировать" Grid.Column="0" 
+                            Style="{StaticResource SuccessButton}"
+                            Click="BtnRegister_Click"/>
+                    <Button Content="Отмена" Grid.Column="2" 
+                            Style="{StaticResource DangerButton}"
+                            Click="BtnCancel_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

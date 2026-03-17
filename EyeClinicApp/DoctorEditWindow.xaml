@@ -1,0 +1,50 @@
+<Window x:Class="EyeClinicApp.DoctorEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Врач" 
+        Height="485" Width="462"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid Margin="0,0,0,12">
+        <Border Background="White" CornerRadius="12" Margin="15">
+            <StackPanel Margin="25">
+
+                <TextBlock x:Name="txtTitle" Text="Добавление врача" 
+                           FontSize="20" FontWeight="Bold"
+                           HorizontalAlignment="Center" Foreground="{StaticResource PrimaryBrush}"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="ФИО врача *" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtFIO" Style="{StaticResource ModernTextBox}" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Специализация *" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <ComboBox x:Name="cmbSpec" FontSize="14" Padding="10,8" Margin="0,0,0,10">
+                    <ComboBoxItem Content="Офтальмолог"/>
+                    <ComboBoxItem Content="Офтальмохирург"/>
+                </ComboBox>
+
+                <TextBlock Text="Телефон" FontSize="13" Foreground="#555" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtPhone" Style="{StaticResource ModernTextBox}" Margin="0,0,0,15"/>
+
+                <TextBlock x:Name="txtError" Foreground="{StaticResource DangerBrush}" 
+                           FontSize="12" TextWrapping="Wrap" Margin="0,0,0,10"
+                           HorizontalAlignment="Center"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Сохранить" Grid.Column="0" 
+                            Style="{StaticResource SuccessButton}" Click="BtnSave_Click"/>
+                    <Button Content="Отмена" Grid.Column="2" 
+                            Style="{StaticResource DangerButton}" Click="BtnCancel_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
